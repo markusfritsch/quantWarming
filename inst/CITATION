@@ -1,0 +1,20 @@
+
+bibentry(bibtype = "unpublished",
+	title = "{Central England Warming in Seasons: Quantile Trend Regression Modeling of Temperature}",
+	author = c(person("Harry", "Haupt"),
+		person("Markus", "Fritsch")),
+	note = "Working paper",
+	year = "2021",
+	header = "For citing the datasets in publication use:"
+	)
+
+bibentry(bibtype = "manual",
+	title = "{quantWarming} -- Data and functions for trend analysis of temperature time series",
+	author = c(person("Markus", "Fritsch"),
+		person("Harry", "Haupt")),
+	note = "{R package version 0.1.1}",
+	year = "2021",
+	url = "https://github.com/markusfritsch/quantWarming",
+	header = "For citing the package in publication use:"
+	)
+

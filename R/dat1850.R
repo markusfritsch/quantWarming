@@ -1,7 +1,7 @@
 #' Central England temperature (CET) data from 1850 until 2020
 #'
 #' Central England temperature (CET) data from 1850 until 2020
-#' employed in \insertCite{HauptFritsch2021quantWarming;textual}{persistenceqr}.
+#' employed in \insertCite{HauptFritsch2021quantWarming;textual}{quantWarming}.
 #' The dataset contains mean monthly temperatures in columns 1 to 12
 #' and annual mean temperatures in column 13. The rownames represent
 #' the years.

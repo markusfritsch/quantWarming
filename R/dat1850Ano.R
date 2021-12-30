@@ -1,7 +1,7 @@
 #' Central England temperature (CET) anomaly data from 1850 until 2020
 #'
 #' Central England temperature (CET) anomaly data from 1850 until 2020
-#' employed in \insertCite{HauptFritsch2021quantWarming;textual}{persistenceqr}.
+#' employed in \insertCite{HauptFritsch2021quantWarming;textual}{quantWarming}.
 #' The dataset contains mean monthly temperatures in columns 1 to 12.
 #' The rownames represent the years. The anomaly data are obtained by
 #' subtracting the mean for each month over the years 1850 until 1900
