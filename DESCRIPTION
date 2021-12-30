@@ -1,0 +1,31 @@
+Package: quantWarming
+Type: Package
+Title: Data and functions for trend analysis of temperature time series
+Version: 0.1.1
+Date: 2021-12-30
+Authors@R: c(person("Markus", "Fritsch", role = c("aut", "cre"),
+		email = "Markus.Fritsch@uni-Passau.de"),
+	person("Harry", "Haupt", role = c("aut"),
+    email = "Harry.Haupt@uni-Passau.de"))
+Author: Markus Fritsch [aut, cre], Harry Haupt [aut]
+Maintainer: Markus Fritsch <Markus.Fritsch@uni-Passau.de>
+Depends: R (>= 4.1.1)
+Imports: forecast (>= 8.15),
+  ggplot2 (>= 3.3.5),
+  gridExtra (>= 2.3),
+  quantreg (>= 5.86),
+	Rdpack (>= 2.1.3),
+	stats (>= 3.6.2),
+	xtable(>= 1.8-4)
+Suggests: testthat (>= 3.1.1),
+	R.rsp (>= 0.44.0)
+RdMacros: Rdpack
+LazyData: true
+Description: Data and functions for trend analysis of temperature time series.
+License: GPL (>=2)
+URL: https://github.com/markusfritsch/quantWarming
+BugReports: https://github.com/markusfritsch/quantWarming/issues
+VignetteBuilder: R.rsp
+Encoding: UTF-8
+Classification/JEL: C02, C14, C18, C22, Q54
+RoxygenNote: 7.1.1
