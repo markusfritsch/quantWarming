@@ -6,6 +6,7 @@
 .RData
 *.Rproj
 *.RData
+*.rds
 
 # RStudio files
 .Rproj.user/
