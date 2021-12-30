@@ -40,7 +40,7 @@
 #' \dontrun{
 #'   data(cet1659, package = "quantWarming")
 #'   annMean <- cet1659[,13]
-#'   tmp <- cbind("Year" = as.numeric(rownames(cet1659)), annMean)
+#'   tmp <- cbind("Year" = as.numeric(rownames(cet1659)), "annMean" = annMean)
 #'   \donttest{plot(y = tmp$Year, x = tmp$annMean)}
 #' }
 #'
