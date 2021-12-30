@@ -39,8 +39,8 @@ from the respective month.
 \dontrun{
   data(dat1850Ano, package = "quantWarming")
   meanTemp <- dat1850Ano[,1]
-  tmp <- cbind("Year" = as.numeric(rownames(dat1850Ano)), "meanTemp" = meanTemp)
-  \donttest{plot(y = tmp$Year, x = tmp$meanTemp)}
+  year <- as.numeric(rownames(dat1850Ano))
+  \donttest{plot(y = year, x = meanTemp)}
 }
 
 }

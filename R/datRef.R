@@ -40,8 +40,8 @@
 #' \dontrun{
 #'   data(datRef, package = "quantWarming")
 #'   annMean <- datRef[,13]
-#'   tmp <- cbind("Year" = as.numeric(rownames(datRef)), "annMean" = annMean)
-#'   \donttest{plot(y = tmp$Year, x = tmp$annMean)}
+#'   year <- as.numeric(rownames(datRef))
+#'   \donttest{plot(y = year, x = annMean)}
 #' }
 #'
 NULL
