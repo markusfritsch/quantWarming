@@ -7,4 +7,5 @@ library(devtools)
 install_github("markusfritsch/quantWarming")
 ```
 
-
+To cite, please use:
+[![DOI](https://zenodo.org/badge/443140161.svg)](https://zenodo.org/badge/latestdoi/443140161)
