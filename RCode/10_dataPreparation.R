@@ -21,7 +21,9 @@
 
 
 
-
+#	setwd("C:/Users/harry/harry/Research/!!!PersistenceQR/data")
+#	setwd("J:/harry/Research/!!!PersistenceQR/data")
+#	setwd("D:/Work/20_Projekte/502_QuantileWarming/R")
 
 
 
@@ -59,9 +61,8 @@ dat		<- read.table(CET, sep = "", skip = 6, header = TRUE,
                   fill = TRUE, na.string = c(-99.99, -99.9))
 names(dat)	<- c(month.abb, "Annual") 								# fix up df names
 dat		<- dat[!is.na(rowSums(dat, na.rm = FALSE)), ]					# remove last line with NAs
-#saveRDS(object = dat, file = "cet1659.rds")
-#rm(list=(ls()[ls() != "dat"]))
-#save.image("../data/cet1659.RData")
+saveRDS(object = dat, file = "cet1659.rds")
+
 
 
 
@@ -71,32 +72,20 @@ dat		<- dat[!is.na(rowSums(dat, na.rm = FALSE)), ]					# remove last line with N
 datRef		<- dat[as.numeric(rownames(dat)) >= 1850 & as.numeric(rownames(dat)) <= 1900, ]
 refColMeans		<- colMeans(datRef)
 refColMedians	<- apply(X = datRef, MARGIN = 2, FUN = median)
-#saveRDS(object = datRef, file = "datRef.rds")
-#rm(list=(ls()[ls() != "datRef"]))
-#save.image("../data/datRef.RData")
+saveRDS(object = datRef, file = "datRef.rds")
 
 
 dat1850		<- dat[as.numeric(rownames(dat)) >= 1850 & as.numeric(rownames(dat)) <= 2020, ]
-#saveRDS(object = dat1850, file = "dat1850.rds")
-#rm(list=(ls()[ls() != "dat1850"]))
-#save.image("../data/dat1850.RData")
-
+saveRDS(object = dat1850, file = "dat1850.rds")
 dat1850Ano		<- t(apply(X = dat1850[,1:12], MARGIN = 1, FUN = function(x) x - refColMeans[1:12]))
-#saveRDS(object = dat1850Ano, file = "dat1850Ano.rds")
-#rm(list=(ls()[ls() != "dat1850Ano"]))
-#save.image("../data/dat1850Ano.RData")
+saveRDS(object = dat1850Ano, file = "dat1850Ano.rds")
 
 
 dat1961		<- dat[as.numeric(rownames(dat)) >= 1961 & as.numeric(rownames(dat)) <= 2020, ]
 dat1961Ano		<- t(apply(X = dat1961[,1:12], MARGIN = 1, FUN = function(x) x - refColMeans[1:12]))
 dat1961AnoMed	<- t(apply(X = dat1961[,1:12], MARGIN = 1, FUN = function(x) x - refColMedians[1:12]))
-#saveRDS(object = dat1961, file = "dat1961.rds")
-#rm(list=(ls()[ls() != "dat1961"]))
-#save.image("../data/dat1961.RData")
-
-#saveRDS(object = dat1961Ano, file = "dat1961Ano.rds")
-#rm(list=(ls()[ls() != "dat1961Ano"]))
-#save.image("../data/dat1961Ano.RData")
+saveRDS(object = dat1961, file = "dat1961.rds")
+saveRDS(object = dat1961Ano, file = "dat1961Ano.rds")
 
 
 rm(CET)

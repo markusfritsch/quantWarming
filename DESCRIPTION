@@ -2,7 +2,7 @@ Package: quantWarming
 Type: Package
 Title: Data and functions for trend analysis of temperature time series
 Version: 0.1.1
-Date: 2021-12-30
+Date: 2022-01-20
 Authors@R: c(person("Markus", "Fritsch", role = c("aut", "cre"),
 		email = "Markus.Fritsch@uni-Passau.de"),
 	person("Harry", "Haupt", role = c("aut"),

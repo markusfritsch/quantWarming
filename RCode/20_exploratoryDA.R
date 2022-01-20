@@ -123,7 +123,7 @@ l.plot	<- ggplot() +
 	geom_line(data = dat.p1, aes(x = index, y = value, group = variable, color = "Mean temp. \n 1961-2020") ) +
 	geom_segment(data = dat.p2, aes(x = x1, xend = x2, y = y1, yend = y2, group = Month, color = "Mean monthly temp. \n 1850-1900"), lwd = 1) +
 	geom_vline(data = dat.p1[id.tmp1, ], aes(xintercept = index), color = cols.tmp[5], lty = 2) +
-	scale_color_manual(values = c("Mean monthly temp. \n 1850-1900" = cols.tmp[6], "Mean temp. \n 1961-2020" = cols.tmp[3]), 
+	scale_color_manual(values = c("Mean monthly temp. \n 1850-1900" = cols.tmp[5], "Mean temp. \n 1961-2020" = cols.tmp[3]), 
                        name = element_blank()) + 
 	labs(y = "Monthly mean temperature (°C)", x = "Month") +
 	scale_x_continuous(breaks = (dat.p2$x1 + dat.p2$x2)/2, labels = lab) +
@@ -136,23 +136,6 @@ l.plot	<- ggplot() +
 #pdf(file = "../document/img/10_linePlotSeasons.pdf", width=8, height=4)
 l.plot
 #dev.off()
-
-
-
-
-###	Lineplot for each month over years next to each other with Q95 over reference period
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -215,13 +198,13 @@ l.plot	<- ggplot(dat.p) +
 	geom_hline(aes(yintercept = 0), color = cols.tmp[3], lty = 1) +
 	geom_hline(aes(yintercept = 1.5), color = cols.tmp[1], lty = 1) +
 	geom_hline(aes(yintercept = 2), color = cols.tmp[7], lty = 1) +
-	labs(y = "Monthly mean temperature anomaly (°C)", x = "Year") +
+	labs(y = "Temperature anomaly (°C)", x = "Year") +
 	theme(
 		legend.key = element_rect(fill = "transparent", colour = "transparent"),
 		panel.background = element_rect(fill = 'transparent'),
 		panel.grid = element_blank() )
 
-#pdf(file = "../document/img/10_linePlotAnoMonthly.pdf", width=16, height=10)
+#pdf(file = "../document/img/10_linePlotAnoMonthly.pdf", width=8, height=4)
 l.plot
 #dev.off()
 
@@ -248,7 +231,7 @@ l.plot	<- ggplot() +
 	geom_hline(aes(yintercept = 0), color = cols.tmp[3], lty = 1) +
 	geom_hline(aes(yintercept = 1.5), color = cols.tmp[1], lty = 1) +
 	geom_hline(aes(yintercept = 2), color = cols.tmp[7], lty = 1) +
-	labs(y = "Monthly mean temperature anomaly (°C)", x = "Year") +
+	labs(y = "Temperature anomaly (°C)", x = "Year") +
 	theme(
 		legend.position = "none",
 		axis.ticks.x = element_blank(), axis.ticks.y = element_blank(),
@@ -272,7 +255,7 @@ h.plot	<- ggplot() +
  	geom_density(data = dat.p, aes(y = value, x=..density..), alpha = .2, fill = cols.tmp[3], col = cols.tmp[5]) + 
 	ylim(floor(min(dat.p2$value)), ceiling(max(dat.p2$value))) +
 	scale_x_reverse() +
-	labs(x = "Relative frequency", y = "Temperature anomaly (°C)") +
+	labs(x = "Relative frequency", y = "") +
 	theme(
 		axis.ticks.x = element_blank(), axis.ticks.y = element_blank(),
 		panel.background = element_rect(fill = "transparent"),
@@ -286,7 +269,7 @@ h.plot
 
 
 
-#pdf(file = "../document/img/10_linePlotAndEmpDensAnoYears.pdf", width=16, height=8)
+#pdf(file = "../document/img/10_linePlotAndEmpDensAnoYears.pdf", width=8, height=4)
 gridExtra::grid.arrange(l.plot, h.plot, nrow = 1, ncol = 2, widths = c(3,1))
 #dev.off()
 
@@ -314,8 +297,10 @@ b.plot	<- ggplot() +
 	geom_hline(yintercept = 0, color = cols.tmp[3], lty = 1) +
 	geom_hline(yintercept = 1.5, color = cols.tmp[1], lty = 1) +
 	geom_hline(yintercept = 2, color = cols.tmp[7], lty = 1) +
-	geom_boxplot(data = dat.b, aes(x = variable, y = value, fill = type), col = cols.tmp[6], alpha = 0.5) +
-	scale_fill_manual(values = c("1850" = cols.tmp[5], "1961" = cols.tmp[3], alpha = 0.5), 
+	geom_boxplot(data = dat.b, aes(x = variable, y = value, fill = type), col = cols.tmp[6], alpha = 0.5,
+		outlier.color = "black", outlier.fill = "black", outlier.alpha = NULL) +
+#		outlier.color = cols.tmp[6], outlier.fill = cols.tmp[6], outlier.alpha = NULL) +
+	scale_fill_manual(values = c("1850" = cols.tmp[5], "1961" = cols.tmp[3]), 
                        name = element_blank()) +
 	labs(y = "Temperature anomaly (°C)", x = "Month") +
 	theme(
@@ -325,7 +310,7 @@ b.plot	<- ggplot() +
 		panel.grid = element_blank() )
 
 
-#pdf(file = "../document/img/10_boxPlotMonths1850vs2020.pdf", width=16, height=10)
+#pdf(file = "../document/img/10_boxPlotMonths1850vs2020.pdf", width=8, height=4)
 b.plot
 #dev.off()
 
@@ -372,7 +357,7 @@ for(m in 1:length(month)){
 
 }
 
-#pdf(file = "../document/img/10_empDensMonthly.pdf", width=12, height=16)
+#pdf(file = "../document/img/10_empDensMonthly.pdf", width=8, height=12)
 gridExtra::grid.arrange(h.plot_Dec, h.plot_Jan, h.plot_Feb,
 	h.plot_Mar, h.plot_Apr, h.plot_May,
 	h.plot_Jun, h.plot_Jul, h.plot_Aug,

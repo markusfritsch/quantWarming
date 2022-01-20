@@ -1,6 +1,6 @@
 
 bibentry(bibtype = "unpublished",
-	title = "{Central England Warming in Seasons: Quantile Trend Regression Modeling of Temperature}",
+	title = "{Quantile Trend Regression and its Application to Central England Temperature}",
 	author = c(person("Harry", "Haupt"),
 		person("Markus", "Fritsch")),
 	note = "Working paper",
