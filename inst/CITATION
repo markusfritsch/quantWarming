@@ -1,10 +1,13 @@
 
-bibentry(bibtype = "unpublished",
+bibentry(bibtype = "article",
 	title = "{Quantile Trend Regression and its Application to Central England Temperature}",
 	author = c(person("Harry", "Haupt"),
 		person("Markus", "Fritsch")),
-	note = "Working paper",
+	journal = "Mathematics",
 	year = "2021",
+	volume = "10",
+	number = "3",
+	url = "https://doi.org/10.3390/math10030413",
 	header = "For citing the datasets in publication use:"
 	)
 
@@ -13,7 +16,7 @@ bibentry(bibtype = "manual",
 	author = c(person("Markus", "Fritsch"),
 		person("Harry", "Haupt")),
 	note = "{R package version 0.1.1}",
-	year = "2021",
+	year = "2022",
 	url = "https://github.com/markusfritsch/quantWarming",
 	header = "For citing the package in publication use:"
 	)

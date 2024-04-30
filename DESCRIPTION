@@ -28,4 +28,4 @@ BugReports: https://github.com/markusfritsch/quantWarming/issues
 VignetteBuilder: R.rsp
 Encoding: UTF-8
 Classification/JEL: C02, C14, C18, C22, Q54
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
